@@ -1,0 +1,473 @@
+/* ========================================
+   CSS Root
+======================================== */
+:root {
+    --color-bg: #f5f0e8;
+    --color-surface: #ffffff;
+    --color-primary: #1a1a2e;
+    --color-accent: #e8c97e;
+    --color-accent-dark: #c9a84c;
+    --color-text: #2c2c3e;
+    --color-muted: #7a7a8c;
+    --color-border: #ddd8cc;
+    --color-completed: #1a1a2e;
+    --color-completed-text: #e8c97e;
+    --color-incomplete: #f0ebe0;
+    --color-incomplete-text: #5a5a6e;
+
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --radius: 8px;
+    --shadow: 0 2px 12px rgba(26, 26, 46, 0.08);
+    --shadow-strong: 0 4px 24px rgba(26, 26, 46, 0.15);
+    --transition: 0.2s ease;
+
+    --max-width: 1100px;
+    --gap: 1.5rem;
+}
+
+/* ========================================
+   Reset & Base
+======================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+header {
+    background-color: var(--color-surface);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-strong);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.site-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+}
+
+/* Hamburger */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 7px 9px;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger:hover {
+    background: rgba(232, 201, 126, 0.15);
+}
+
+/* Hamburger open state */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ========================================
+   NAV
+======================================== */
+nav {
+    background-color: var(--color-primary);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+}
+
+nav.open {
+    max-height: 300px;
+}
+
+nav ul {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #ccc;
+    font-weight: 500;
+    border-radius: var(--radius);
+    transition: background var(--transition), color var(--transition);
+}
+
+nav ul li a:hover {
+    background: rgba(232, 201, 126, 0.15);
+    color: var(--color-accent);
+}
+
+nav ul li a.active {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ========================================
+   MAIN
+======================================== */
+main {
+    flex: 1;
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+
+h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--color-primary);
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+section {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about-text {
+    padding: 1.5rem;
+}
+
+.about-text h2 {
+    margin: -1.5rem -1.5rem 1.25rem;
+    border-radius: 0;
+}
+
+.about-text p {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-size: 0.97rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-photo {
+    border-top: 1px solid var(--color-border);
+}
+
+.about-photo h2 {
+    border-radius: 0;
+}
+
+.photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    background: var(--color-bg);
+    color: var(--color-muted);
+}
+
+/* ========================================
+   COURSES SECTION
+======================================== */
+.courses-section .inner {
+    padding: 1.25rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.filter-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.55rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.filter-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    padding: 1.25rem;
+}
+
+.course-card {
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.course-card.completed {
+    background: var(--color-completed);
+    color: var(--color-completed-text);
+    border-color: var(--color-completed);
+}
+
+.course-card.incomplete {
+    background: var(--color-incomplete);
+    color: var(--color-incomplete-text);
+    border-color: var(--color-border);
+}
+
+.credit-total {
+    padding: 0.75rem 1.25rem 1.25rem;
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.credit-total strong {
+    color: var(--color-primary);
+}
+
+/* ========================================
+   GOALS SECTION
+======================================== */
+.goals-section {
+    padding: 0 0 1.5rem;
+}
+
+.goals-section h2 {
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-bottom: 1rem;
+}
+
+.goals-section p {
+    padding: 0 1.5rem;
+    font-size: 0.97rem;
+    color: var(--color-text);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+    background: var(--color-primary);
+    color: #aaa;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-social a {
+    color: #aaa;
+    transition: color var(--transition), transform var(--transition);
+    display: flex;
+}
+
+.footer-social a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.footer-info {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p:first-child {
+    color: #ccc;
+}
+
+.footer-modified {
+    font-size: 0.78rem;
+    color: #666;
+}
+
+/* ========================================
+   LARGE SCREENS (≥ 700px)
+======================================== */
+@media (min-width: 700px) {
+
+    /* Show nav inline */
+    nav {
+        max-height: none !important;
+        overflow: visible;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 1.5rem;
+        gap: 0.25rem;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 1.1rem;
+    }
+
+    /* Hide hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    /* About layout: side by side */
+    .about-section {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .about-photo {
+        border-top: none;
+        border-left: 1px solid var(--color-border);
+    }
+
+    .about-photo h2 {
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        padding: 2.5rem 2rem 4rem;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/normalize.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Victor Okoromi personal portfolio and Web Certificate coursework page." />
+  <meta name="author" content="Víctor" />
+  <title>Victor | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    
+
+  <!-- ======= HEADER ======= -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="Site logo" class="logo" width="44" height="44" />
+        <span class="site-name">Victor Okoromi</span>
+      </div>
+      <button class="hamburger" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= NAV ======= -->
+  <nav id="mainNav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="chamber/index.html">Chamber</a></li>
+      <li><a href="final/index.html">Final</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= MAIN ======= -->
+  <main>
+    <h1>Home</h1>
+
+    <!-- About Me -->
+    <section class="about-section">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I'm a Python backend developer with a passion for building clean, efficient systems. Currently expanding into full-stack development, I've recently completed a production-ready job application bot using FastAPI, Playwright, and the Claude API. I enjoy solving real problems with well-structured code and love learning the "why" behind every concept.
+        </p>
+        <p>
+          When I'm not coding, I'm exploring new tools, reading about software architecture, and preparing for backend assessments that push me from foundational to mid-to-senior Python expertise.
+        </p>
+      </div>
+      <div class="about-photo">
+        <h2>Student Photo</h2>
+        <div class="photo-placeholder" aria-label="Student photo placeholder">
+         <img src="images/profile.webp" alt="Student Photo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Certificate Courses -->
+    <section class="courses-section">
+      <h2>Web Certificate Courses</h2>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="CSE">CSE</button>
+        <button class="filter-btn" data-filter="WDD">WDD</button>
+      </div>
+
+      <div id="courseList" class="course-grid"></div>
+      <p class="credit-total">The total credits for courses listed above is <strong id="totalCredits">0</strong></p>
+    </section>
+
+    <!-- Future Courses -->
+    <section class="goals-section">
+      <h2>My Goals</h2>
+      <p>
+        My goal is to become a proficient full-stack engineer with deep Python expertise. I aim to master FastAPI patterns, async programming, and system design — building software that scales and performs under pressure.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="footer-social">
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M12 .5C5.649.5.5 5.649.5 12c0 5.085 3.292 9.388 7.863 10.907.575.107.785-.249.785-.553 0-.273-.01-.995-.015-1.953-3.2.696-3.876-1.542-3.876-1.542-.522-1.328-1.276-1.682-1.276-1.682-1.044-.714.079-.699.079-.699 1.154.081 1.762 1.185 1.762 1.185 1.025 1.756 2.69 1.249 3.347.955.104-.742.401-1.249.73-1.536-2.554-.29-5.237-1.277-5.237-5.682 0-1.255.449-2.28 1.184-3.084-.119-.29-.514-1.459.112-3.042 0 0 .964-.309 3.161 1.179A10.99 10.99 0 0 1 12 6.585c.977.004 1.96.132 2.878.387 2.195-1.488 3.157-1.179 3.157-1.179.628 1.583.233 2.752.114 3.042.737.804 1.183 1.829 1.183 3.084 0 4.415-2.687 5.389-5.248 5.673.413.355.78 1.056.78 2.129 0 1.537-.014 2.776-.014 3.154 0 .307.207.665.791.552C20.711 21.385 24 17.084 24 12 24 5.649 18.351.5 12 .5z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M20.447 20.452H17.21v-5.569c0-1.328-.025-3.037-1.85-3.037-1.851 0-2.134 1.445-2.134 2.939v5.667H9.99V9h3.114v1.561h.044c.434-.822 1.493-1.689 3.073-1.689 3.289 0 3.895 2.166 3.895 4.984v6.596zM5.337 7.433a1.807 1.807 0 1 1 0-3.614 1.807 1.807 0 0 1 0 3.614zm1.561 13.019H3.776V9h3.122v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.878L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="https://dev.to/" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="footer-info">
+      <p id="copyright"></p>
+      <p>Sunday Victor Okoromi &bull; Nigeria</p>
+    </div>
+
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
 </body>
 </html>
