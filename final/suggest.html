@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suggest a movie for the Movie Discovery Hub community. Share your favourite film recommendation with us.">
+  <meta name="author" content="Sunday Victor Okoromi">
+  <title>Suggest a Movie | Movie Discovery Hub</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Suggest a Movie | Movie Discovery Hub">
+  <meta property="og:description" content="Share your favourite film recommendation with the Movie Discovery Hub community.">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS modules -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body class="page-body">
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        🎬 <span>Movie</span>Discovery Hub
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="movies.html"    class="nav-link">Movies</a></li>
+        <li><a href="favorites.html" class="nav-link">Favorites</a></li>
+        <li><a href="suggest.html"   class="nav-link active">Suggest</a></li>
+        <li><a href="siteplan.html"  class="nav-link">Site Plan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Suggest a Movie</h1>
+      <p>Know a great film others should discover? Fill in the form below and share your recommendation.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="form-card">
+
+          <form action="thankyou.html" method="GET" id="suggest-form" novalidate>
+
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Full Name <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Your full name"
+                required
+                minlength="2"
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <!-- Movie title -->
+            <div class="form-group">
+              <label for="movie">Movie Title <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="movie"
+                name="movie"
+                class="form-control"
+                placeholder="e.g. Inception"
+                required
+                minlength="1"
+              >
+            </div>
+
+            <!-- Release year -->
+            <div class="form-group">
+              <label for="year">Release Year</label>
+              <input
+                type="number"
+                id="year"
+                name="year"
+                class="form-control"
+                placeholder="e.g. 2010"
+                min="1888"
+                max="2026"
+              >
+            </div>
+
+            <!-- Genre -->
+            <div class="form-group">
+              <label for="genre">Genre <span aria-hidden="true">*</span></label>
+              <select id="genre" name="genre" class="form-control" required>
+                <option value="">Select a genre…</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Musical">Musical</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+              </select>
+            </div>
+
+            <!-- Rating -->
+            <fieldset>
+              <legend>Your Rating <span aria-hidden="true">*</span></legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="1" required> ★ Poor
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="2"> ★★ Fair
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="3"> ★★★ Good
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="4"> ★★★★ Great
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="5"> ★★★★★ Masterpiece
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Why should others watch it?</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="4"
+                placeholder="Tell us what makes this film special…"
+              ></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">Submit Suggestion &rarr;</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Movie Discovery Hub &mdash; Sunday Victor Okoromi &mdash; WDD 231</p>
+    <p><a href="siteplan.html">Site Plan</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks  = document.querySelector('.nav-links');
+    hamburger?.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('open', !expanded);
+    });
+
+    const form = document.getElementById('suggest-form');
+    form.addEventListener('submit', (e) => {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.querySelectorAll(':invalid').forEach(el => {
+          el.style.borderColor = '#f43f5e';
+        });
+      }
+    });
+
+    form.querySelectorAll('.form-control').forEach(el => {
+      el.addEventListener('input', () => {
+        el.style.borderColor = el.validity.valid ? '' : '#f43f5e';
+      });
+    });
+  </script>
+</body>
+</html>

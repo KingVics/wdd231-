@@ -3,149 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site plan for the Movie Discovery Hub individual website project.">
+  <meta name="description" content="Movie Discovery Hub — browse trending films, explore genres, and save your favourites.">
   <meta name="author" content="Sunday Victor Okoromi">
-  <title>Movie Discovery Hub Site Plan</title>
+  <title>Movie Discovery Hub</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Movie Discovery Hub">
+  <meta property="og:description" content="Browse trending films, explore genres, and save your favourites — all in one place.">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/normalize.css">
-  <link rel="stylesheet" href="styles/siteplan.css">
+
+  <!-- CSS modules -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/modal.css">
 </head>
-<body>
-  <header class="hero">
-    <p class="eyebrow">WDD 231 Individual Project Plan</p>
-    <h1>Movie Discovery Hub</h1>
-    <p class="hero-copy">
-      A planning document for a movie recommendation website that helps visitors browse trending titles,
-      explore categories, and save favorites for later.
-    </p>
+<body class="page-body">
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        🎬 <span>Movie</span>Discovery Hub
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"     class="nav-link active">Home</a></li>
+        <li><a href="movies.html"    class="nav-link">Movies</a></li>
+        <li><a href="favorites.html" class="nav-link">Favorites</a></li>
+        <li><a href="suggest.html"   class="nav-link">Suggest</a></li>
+        <li><a href="siteplan.html"  class="nav-link">Site Plan</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="page-layout">
-    <section class="card">
-      <h2>Site Name</h2>
-      <p><strong>Movie Discovery Hub</strong></p>
-      <p>
-        This name was selected because it clearly explains the purpose of the site. It presents the website
-        as a central place where users can discover movies, explore recommendations, and keep track of films
-        they want to watch.
-      </p>
-      <p><strong>Optional domain:</strong> moviediscoveryhub.site</p>
-    </section>
-
-    <section class="card">
-      <h2>Site Purpose</h2>
-      <p>
-        The website will help users discover movies to watch based on categories such as trending, popular,
-        and recommended titles. It will provide movie details including title, genre, release date, rating,
-        and a short description. The site will also let users save favorite movies with local storage and
-        open a modal dialog to view more detailed information without leaving the page.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Scenarios</h2>
-      <ul>
-        <li>Which trending movies should I watch this week?</li>
-        <li>Can I save my favorite movies and come back to them later?</li>
-        <li>Where can I quickly see the rating, genre, and release date for a movie?</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Color Scheme</h2>
-      <div class="color-grid">
-        <article class="color-swatch swatch-dark">
-          <h3>Midnight Navy</h3>
-          <p><code>#0F172A</code></p>
-          <p>Used for headings, footer background, buttons, and strong contrast sections.</p>
-        </article>
-        <article class="color-swatch swatch-gold">
-          <h3>Cinema Gold</h3>
-          <p><code>#F59E0B</code></p>
-          <p>Used for accents, call-to-action highlights, labels, and wireframe emphasis.</p>
-        </article>
-        <article class="color-swatch swatch-light">
-          <h3>Soft Silver</h3>
-          <p><code>#E5E7EB</code></p>
-          <p>Used for card backgrounds, borders, and layout separation areas.</p>
-        </article>
-        <article class="color-swatch swatch-cream">
-          <h3>Screen White</h3>
-          <p><code>#F8FAFC</code></p>
-          <p>Used as the main page background and for readable content sections.</p>
-        </article>
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">WDD 231 Final Project</p>
+        <h1 class="hero-title">
+          Discover Your Next<br>
+          <em>Favourite Film</em>
+        </h1>
+        <p class="hero-desc">
+          Browse trending titles, explore genres, read overviews, and build your
+          personal watch list — all in one place.
+        </p>
+        <div class="hero-cta">
+          <a href="movies.html" class="btn-primary">Browse Movies</a>
+          <a href="favorites.html" class="btn-ghost">My Favorites</a>
+        </div>
       </div>
-    </section>
 
-    <section class="card">
-      <h2>Typography</h2>
-      <div class="type-samples">
-        <article>
-          <h3 class="font-display">Space Grotesk</h3>
-          <p>Used for page headings, section titles, and highlighted labels.</p>
-        </article>
-        <article>
-          <h3 class="font-body">Source Sans 3</h3>
-          <p>Used for body text, lists, descriptions, and general page content.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Planned Pages</h2>
-      <div class="page-list">
-        <article>
-          <h3>Home Page</h3>
-          <p>Introduces the website and highlights featured or trending movies.</p>
-        </article>
-        <article>
-          <h3>Movies Page</h3>
-          <p>Displays a dynamic movie list loaded from JSON data or an external API.</p>
-        </article>
-        <article>
-          <h3>Favorites Page</h3>
-          <p>Shows saved favorite movies using local storage so the user can revisit them later.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="card wireframe-card">
-      <h2>Wireframe</h2>
-      <div class="wireframes">
-        <article class="wireframe">
-          <h3>Mobile View</h3>
-          <div class="frame mobile-frame">
-            <div class="wf-box wf-header">Header / Logo / Menu</div>
-            <div class="wf-box wf-hero">Hero Banner</div>
-            <div class="wf-box">Search / Filter</div>
-            <div class="wf-box">Featured Movies Slider</div>
-            <div class="wf-box">Trending Movies Grid</div>
-            <div class="wf-box">Recommendation Section</div>
-            <div class="wf-box">Footer</div>
+      <div class="featured-panel">
+        <img
+          id="featured-poster"
+          class="featured-poster"
+          src="https://placehold.co/600x300/1a1a2e/F59E0B?text=Loading..."
+          alt="Featured movie poster"
+          width="600"
+          height="300"
+        >
+        <div class="featured-info">
+          <p class="featured-label">&#127775; Featured Film</p>
+          <h2 class="featured-title" id="featured-title">Loading…</h2>
+          <p class="featured-meta" id="featured-meta"></p>
+          <p class="featured-overview" id="featured-overview"></p>
+          <div style="margin-top:1rem;">
+            <button id="featured-btn" class="btn-primary">View Details</button>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <article class="wireframe">
-          <h3>Desktop / Tablet View</h3>
-          <div class="frame desktop-frame">
-            <div class="wf-box wf-header wide">Header / Logo / Navigation</div>
-            <div class="wf-box wf-hero wide">Hero Banner with Featured Movie</div>
-            <div class="wf-row">
-              <div class="wf-box">Search / Filters</div>
-              <div class="wf-box">Quick Stats / Categories</div>
-            </div>
-            <div class="wf-box wide">Trending Movies Grid</div>
-            <div class="wf-row">
-              <div class="wf-box">Recommended Movies</div>
-              <div class="wf-box">Favorites Preview</div>
-            </div>
-            <div class="wf-box wide">Footer</div>
-          </div>
-        </article>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Trending Now</h2>
+          <a href="movies.html" class="section-link">View all &rarr;</a>
+        </div>
+        <div class="movies-grid" id="trending-grid">
+          <p class="state-message">Loading trending movies…</p>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Movie Discovery Hub &mdash; Sunday Victor Okoromi &mdash; WDD 231</p>
+    <p><a href="siteplan.html">Site Plan</a></p>
+  </footer>
+
+  <script type="module" src="scripts/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

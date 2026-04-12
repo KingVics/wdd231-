@@ -1,0 +1,147 @@
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Page body gets top padding equal to the sticky nav */
+.page-body {
+  padding-top: var(--nav-height);
+}
+
+/* Generic section spacing */
+.section {
+  padding-block: 3rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.section-link {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+/* Movies grid */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Search + filter bar */
+.search-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--silver);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--card);
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--silver);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--card);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--midnight);
+  border-color: var(--midnight);
+  color: #fff;
+}
+
+/* Empty / loading states */
+.state-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Page title bar (movies / favorites page top) */
+.page-hero {
+  background: var(--midnight);
+  color: #fff;
+  padding-block: 3rem 2.5rem;
+}
+
+.page-hero h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  color: var(--silver);
+  max-width: 40rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--midnight);
+  color: var(--silver);
+  text-align: center;
+  padding-block: 2rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+.site-footer a {
+  color: var(--gold);
+}
+
+@media (min-width: 640px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}

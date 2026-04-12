@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all movies on Movie Discovery Hub. Filter by genre, search by title, and save your favourites.">
+  <meta name="author" content="Sunday Victor Okoromi">
+  <title>Movies | Movie Discovery Hub</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Movies | Movie Discovery Hub">
+  <meta property="og:description" content="Browse all movies. Filter by genre, search by title, and save your favourites.">
+  <meta property="og:type"        content="website">
+  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS modules -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/modal.css">
+</head>
+<body class="page-body">
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo">
+        🎬 <span>Movie</span>Discovery Hub
+      </a>
+
+      <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="movies.html"    class="nav-link active">Movies</a></li>
+        <li><a href="favorites.html" class="nav-link">Favorites</a></li>
+        <li><a href="suggest.html"   class="nav-link">Suggest</a></li>
+        <li><a href="siteplan.html"  class="nav-link">Site Plan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>All Movies</h1>
+      <p>Search, filter by genre, and save your favourites.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <div class="search-bar">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search movies…"
+            aria-label="Search movies"
+          >
+        </div>
+
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by genre"></div>
+
+        <p style="margin-bottom:1rem; color:#6b7280; font-size:0.9rem;">
+          Showing <strong id="movies-count">…</strong>
+        </p>
+
+        <div class="movies-grid" id="movies-grid">
+          <p class="state-message">Loading movies…</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Movie Discovery Hub &mdash; Sunday Victor Okoromi &mdash; WDD 231</p>
+    <p><a href="siteplan.html">Site Plan</a></p>
+  </footer>
+
+  <script type="module" src="scripts/movies.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

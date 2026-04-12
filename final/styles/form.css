@@ -1,0 +1,156 @@
+
+.form-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-md);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Individual field wrapper */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label,
+fieldset legend {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--midnight);
+}
+
+/* Text / email / number / textarea / select */
+.form-control {
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--silver);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Fieldset for radio group */
+fieldset {
+  border: 2px solid var(--silver);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem 1rem;
+  margin: 0 0 1.25rem;
+  transition: border-color 0.2s;
+}
+
+fieldset:focus-within {
+  border-color: var(--gold);
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin-top: 0.65rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--gold);
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Submit row */
+.form-submit {
+  margin-top: 0.5rem;
+}
+
+
+
+.result-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-md);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.result-card .checkmark {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.result-card > p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.result-list {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--silver);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.result-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.result-list li:nth-child(even) {
+  background: rgba(229, 231, 235, 0.35);
+}
+
+.result-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  align-self: center;
+}
+
+.result-value {
+  color: var(--midnight);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}

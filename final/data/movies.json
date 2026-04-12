@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Dune: Part Two",
+    "genres": ["Sci-Fi", "Adventure", "Drama"],
+    "year": 2024,
+    "rating": 8.5,
+    "overview": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee.",
+    "poster": "https://placehold.co/300x450/1a1a2e/F59E0B?text=Dune%3A+Part+Two",
+    "trending": true,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Oppenheimer",
+    "genres": ["Drama", "History", "Thriller"],
+    "year": 2023,
+    "rating": 8.9,
+    "overview": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb during World War II. A gripping portrait of the man who changed the world forever.",
+    "poster": "https://placehold.co/300x450/1a0f00/e8c547?text=Oppenheimer",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Poor Things",
+    "genres": ["Comedy", "Drama", "Fantasy"],
+    "year": 2023,
+    "rating": 8.0,
+    "overview": "The incredible tale about the fantastical evolution of Bella Baxter, a young woman brought back to life by the brilliant and unorthodox scientist Dr. Godwin Baxter.",
+    "poster": "https://placehold.co/300x450/0d1f0d/c8f560?text=Poor+Things",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Killers of the Flower Moon",
+    "genres": ["Crime", "Drama", "History"],
+    "year": 2023,
+    "rating": 7.7,
+    "overview": "Members of the Osage Nation are murdered under mysterious circumstances in the 1920s, sparking a major F.B.I. investigation involving J. Edgar Hoover.",
+    "poster": "https://placehold.co/300x450/1c1228/c090e0?text=Killers+of+the+Flower+Moon",
+    "trending": false,
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Alien: Romulus",
+    "genres": ["Horror", "Sci-Fi", "Thriller"],
+    "year": 2024,
+    "rating": 7.3,
+    "overview": "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
+    "poster": "https://placehold.co/300x450/050505/39ff14?text=Alien%3A+Romulus",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Inside Out 2",
+    "genres": ["Animation", "Family", "Comedy"],
+    "year": 2024,
+    "rating": 7.8,
+    "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions. Joy, Sadness, Anger, Fear, and Disgust are pushed to make room for Anxiety.",
+    "poster": "https://placehold.co/300x450/1a0a3e/ff8fab?text=Inside+Out+2",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Deadpool & Wolverine",
+    "genres": ["Action", "Comedy", "Superhero"],
+    "year": 2024,
+    "rating": 7.9,
+    "overview": "Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.",
+    "poster": "https://placehold.co/300x450/8b0000/ffd700?text=Deadpool+%26+Wolverine",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "The Wild Robot",
+    "genres": ["Animation", "Family", "Drama"],
+    "year": 2024,
+    "rating": 8.3,
+    "overview": "After a shipwreck, robot Roz is stranded on an uninhabited island and must adapt to the harsh environment, raising a gosling she has adopted as her own.",
+    "poster": "https://placehold.co/300x450/0a2e2e/87ceeb?text=The+Wild+Robot",
+    "trending": true,
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "Wicked",
+    "genres": ["Musical", "Fantasy", "Drama"],
+    "year": 2024,
+    "rating": 7.6,
+    "overview": "The story of Elphaba, a young woman misunderstood because of her unusual green skin, and Glinda, a popular aristocrat, as they forge an unlikely friendship in the Land of Oz.",
+    "poster": "https://placehold.co/300x450/2e0a2e/ff69b4?text=Wicked",
+    "trending": false,
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Godzilla x Kong",
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "year": 2024,
+    "rating": 6.5,
+    "overview": "The epic battle continues as Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence and our own.",
+    "poster": "https://placehold.co/300x450/0a1628/4ecdc4?text=Godzilla+x+Kong",
+    "trending": false,
+    "featured": false
+  },
+  {
+    "id": 11,
+    "title": "Twisters",
+    "genres": ["Action", "Adventure", "Thriller"],
+    "year": 2024,
+    "rating": 7.2,
+    "overview": "Kate Cooper, a former storm chaser haunted by a devastating encounter with a tornado, is lured back to the open plains of Oklahoma by her friend Javi to test a new storm-tracking system.",
+    "poster": "https://placehold.co/300x450/0d1f0d/90ee90?text=Twisters",
+    "trending": false,
+    "featured": false
+  },
+  {
+    "id": 12,
+    "title": "A Quiet Place: Day One",
+    "genres": ["Horror", "Sci-Fi", "Drama"],
+    "year": 2024,
+    "rating": 7.0,
+    "overview": "Experience the day the world went quiet. Follow a woman's journey of survival as New York City is invaded by creatures that hunt by sound.",
+    "poster": "https://placehold.co/300x450/0a0a14/c0c0c0?text=A+Quiet+Place",
+    "trending": false,
+    "featured": false
+  }
+]
