@@ -24,7 +24,6 @@ fieldset legend {
   color: var(--midnight);
 }
 
-/* Text / email / number / textarea / select */
 .form-control {
   padding: 0.65rem 1rem;
   border: 2px solid var(--silver);

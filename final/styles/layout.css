@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
@@ -40,7 +40,7 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--gold);
+  color: var(--ink);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   white-space: nowrap;

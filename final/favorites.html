@@ -15,7 +15,8 @@
   <meta property="og:description" content="Your saved favourite movies on Movie Discovery Hub. Pick up where you left off.">
   <meta property="og:type"        content="website">
   <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
-
+  <meta property="og:url" content="https://kingvics.github.io/wdd231/final/favorites.html" />
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,7 @@
 <body class="page-body">
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
+    <nav class="nav wrapper" aria-label="Main navigation">
       <a href="index.html" class="nav-logo">
         🎬 <span>Movie</span>Discovery Hub
       </a>
@@ -54,7 +55,7 @@
   </header>
 
   <section class="page-hero">
-    <div class="container">
+    <div class="wrapper">
       <h1>My Favorites</h1>
       <p>
         You have <strong id="fav-count">0</strong> saved movie<span id="fav-plural">s</span>.
@@ -65,7 +66,7 @@
 
   <main>
     <section class="section">
-      <div class="container">
+      <div class="wrapper">
 
         <!-- Empty state (hidden when there are favorites) -->
         <div id="empty-state" class="empty-css" >

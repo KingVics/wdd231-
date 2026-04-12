@@ -1,4 +1,3 @@
-
 .hero {
   background: var(--midnight);
   overflow: hidden;
@@ -94,6 +93,9 @@
   margin-top: 1rem;
 }
 
+
+
+
 /* Featured movie panel inside hero */
 .featured-panel {
   background: rgba(255, 255, 255, 0.05);
@@ -148,6 +150,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.btn-primary {
+  color: var(--gold);
 }
 
 @media (min-width: 820px) {

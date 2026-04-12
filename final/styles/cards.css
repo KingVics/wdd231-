@@ -119,7 +119,6 @@
   color: #f43f5e;
 }
 
-/* #881337 on #fff1f2 = 8.0:1 — passes AAA */
 .btn-fav.is-favorite {
   border-color: #f43f5e;
   background: #fff1f2;
