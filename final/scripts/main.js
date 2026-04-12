@@ -5,15 +5,6 @@ import { renderMovies, syncFavButton } from './render.js';
 import { toggleFavorite } from './storage.js';
 import { initModal, openModal } from './modal.js';
 
-// // Hamburger nav
-// const hamburger = document.querySelector('.hamburger');
-// const navLinks  = document.querySelector('.nav-links');
-
-// hamburger?.addEventListener('click', () => {
-//   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-//   hamburger.setAttribute('aria-expanded', String(!expanded));
-//   navLinks.classList.toggle('open', !expanded);
-// });
 
 // Featured panel with DOM refs
 function renderFeatured(movie) {

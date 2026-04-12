@@ -41,14 +41,18 @@ function normalizeMovie(raw) {
 }
 
 //  API helpers 
-
 async function omdbFetch(params) {
-  const url = `${BASE_URL}?${params}&apikey=${API_KEY}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Network error: ${res.status}`);
-  const data = await res.json();
-  if (data.Response === 'False') throw new Error(data.Error ?? 'OMDB returned no results');
-  return data;
+  try {
+    const url = `${BASE_URL}?${params}&apikey=${API_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Network error: ${res.status}`);
+    const data = await res.json();
+    if (data.Response === 'False') throw new Error(data.Error ?? 'OMDB returned no results');
+    return data;
+  } catch (error) {
+    console.error('Error fetching OMDB data:', error);
+    throw error;
+  }
 }
 
 //  Public API
