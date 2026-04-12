@@ -1,7 +1,7 @@
 
 
 const API_KEY = '64bca8ea';
-const BASE_URL = 'http://www.omdbapi.com/';
+const BASE_URL = 'https://www.omdbapi.com/';
 
 const PRESET_IDS = [
   'tt1375666', // Inception (2010)
