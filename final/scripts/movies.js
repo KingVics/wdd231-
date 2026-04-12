@@ -102,6 +102,8 @@ initModal((id, nowFav) => {
   });
 });
 
+document.getElementById('year').textContent = new Date().getFullYear();
+
 buildFilterBar();
 
 (async () => {

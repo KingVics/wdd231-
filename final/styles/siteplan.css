@@ -236,6 +236,20 @@ ul {
   margin-bottom: 0;
 }
 
+/* Footer for siteplan page */
+.siteplan-footer {
+  background: var(--midnight);
+  color: var(--silver);
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.siteplan-footer a {
+  color: var(--gold);
+}
+
 @media (min-width: 760px) {
   .page-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));

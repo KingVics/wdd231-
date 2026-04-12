@@ -4,22 +4,22 @@ import { getFavorites, toggleFavorite } from './storage.js';
 import { renderMovies, syncFavButton } from './render.js';
 import { initModal, openModal } from './modal.js';
 
-// Hamburger nav 
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger?.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  navLinks.classList.toggle('open', !expanded);
-});
 
 // DOM refs
-const grid = document.getElementById('favorites-grid');
-const countEl = document.getElementById('fav-count');
+const grid       = document.getElementById('favorites-grid');
+const countEl    = document.getElementById('fav-count');
+const pluralEl   = document.getElementById('fav-plural');
 const emptyState = document.getElementById('empty-state');
 
-// Render favorites on page load and after any change
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+if (countEl && pluralEl) {
+  new MutationObserver(() => {
+    pluralEl.textContent = countEl.textContent === '1' ? '' : 's';
+  }).observe(countEl, { childList: true, characterData: true, subtree: true });
+}
+
 function render() {
   const favMovies = getFavorites();
 
@@ -59,12 +59,13 @@ function render() {
   });
 }
 
-// Initialize modal with callback to sync favorites between modal and main page
 initModal((id, nowFav) => {
   if (!nowFav) {
     document.querySelector(`.card-wrapper:has([data-id="${id}"])`)?.remove();
     render();
   }
 });
+
+
 
 render();

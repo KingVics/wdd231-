@@ -14,7 +14,7 @@
   <meta property="og:title"       content="Thank You | Movie Discovery Hub">
   <meta property="og:description" content="Your movie suggestion has been received. Thank you!">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+  <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/form.css">
+  <!-- SCRIPT -->
+  <script type="module" src="scripts/hamburger.js"></script>
+  <script type="module" src="scripts/thankyou.js"></script>
 </head>
 <body class="page-body">
 
@@ -69,12 +72,8 @@
 
           <div class="result-actions">
             <a href="movies.html" class="btn-primary">Browse Movies</a>
-            <a href="suggest.html" class="btn-ghost" style="
-              display:inline-flex;align-items:center;
-              padding:.75rem 1.5rem;border-radius:10px;
-              border:2px solid var(--silver);color:var(--midnight);
-              font-family:var(--font-heading);font-weight:600;font-size:1rem;
-            ">Suggest Another</a>
+            <a href="suggest.html" class="btn-ghost suggest-again" 
+            >Suggest Another</a>
           </div>
         </div>
       </div>
@@ -90,53 +89,6 @@
     </p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Hamburger nav
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks  = document.querySelector('.nav-links');
-    hamburger?.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      navLinks.classList.toggle('open', !expanded);
-    });
-
-    // Render submitted form data from URL params
-    const params = new URLSearchParams(window.location.search);
-    const FIELDS = [
-      { key: 'name',    label: 'Name' },
-      { key: 'email',   label: 'Email' },
-      { key: 'movie',   label: 'Movie' },
-      { key: 'year',    label: 'Year' },
-      { key: 'genre',   label: 'Genre' },
-      { key: 'rating',  label: 'Rating' },
-      { key: 'message', label: 'Message' },
-    ];
-
-    const STARS = { '1': '★ Poor', '2': '★★ Fair', '3': '★★★ Good', '4': '★★★★ Great', '5': '★★★★★ Masterpiece' };
-    const list  = document.getElementById('result-list');
-
-    FIELDS.forEach(({ key, label }) => {
-      const raw = params.get(key);
-      if (!raw) return;
-      const value = key === 'rating' ? (STARS[raw] ?? raw) : raw;
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span class="result-label">${label}</span>
-        <span class="result-value">${value}</span>
-      `;
-      list.appendChild(li);
-    });
-
-    // Fallback if no params (e.g. navigated directly)
-    if (!list.children.length) {
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="result-label" style="grid-column:1/-1;color:#6b7280;">
-        No submission data found. <a href="suggest.html">Go back to the form.</a>
-      </span>`;
-      list.appendChild(li);
-    }
-  </script>
+ 
 </body>
 </html>

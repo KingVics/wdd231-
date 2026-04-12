@@ -14,7 +14,7 @@
   <meta property="og:title"       content="Movie Discovery Hub">
   <meta property="og:description" content="Browse trending films, explore genres, and save your favourites — all in one place.">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+  <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,11 @@
   <link rel="stylesheet" href="styles/hero.css">
   <link rel="stylesheet" href="styles/cards.css">
   <link rel="stylesheet" href="styles/modal.css">
+
+  <!-- SCRIPT -->
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/hamburger.js"></script>
+
 </head>
 <body class="page-body">
 
@@ -83,7 +88,7 @@
           <h2 class="featured-title" id="featured-title">Loading…</h2>
           <p class="featured-meta" id="featured-meta"></p>
           <p class="featured-overview" id="featured-overview"></p>
-          <div style="margin-top:1rem;">
+          <div>
             <button id="featured-btn" class="btn-primary">View Details</button>
           </div>
         </div>
@@ -111,12 +116,10 @@
     <p>
       <a href="siteplan.html">Site Plan</a>
       &nbsp;&bull;&nbsp;
-      <!-- Replace # with your YouTube / Loom video URL after recording -->
       <a href="#" target="_blank" rel="noopener">&#127909; Video Demonstration</a>
     </p>
   </footer>
 
-  <script type="module" src="scripts/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
 </body>
 </html>

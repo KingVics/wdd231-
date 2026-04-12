@@ -14,7 +14,7 @@
   <meta property="og:title"       content="Suggest a Movie | Movie Discovery Hub">
   <meta property="og:description" content="Share your favourite film recommendation with the Movie Discovery Hub community.">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+  <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/form.css">
+
+  <!-- SCRIPT -->
+  <script type="module" src="scripts/hamburger.js"></script>
+  <script type="module" src="scripts/suggest.js"></script>
 </head>
 <body class="page-body">
 
@@ -47,6 +51,8 @@
         <li><a href="siteplan.html"  class="nav-link">Site Plan</a></li>
       </ul>
     </nav>
+
+
   </header>
 
   <section class="page-hero">
@@ -193,33 +199,5 @@
       <a href="#" target="_blank" rel="noopener">&#127909; Video Demonstration</a>
     </p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks  = document.querySelector('.nav-links');
-    hamburger?.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      navLinks.classList.toggle('open', !expanded);
-    });
-
-    const form = document.getElementById('suggest-form');
-    form.addEventListener('submit', (e) => {
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        form.querySelectorAll(':invalid').forEach(el => {
-          el.style.borderColor = '#f43f5e';
-        });
-      }
-    });
-
-    form.querySelectorAll('.form-control').forEach(el => {
-      el.addEventListener('input', () => {
-        el.style.borderColor = el.validity.valid ? '' : '#f43f5e';
-      });
-    });
-  </script>
 </body>
 </html>

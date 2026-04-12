@@ -14,7 +14,7 @@
   <meta property="og:title"       content="My Favorites | Movie Discovery Hub">
   <meta property="og:description" content="Your saved favourite movies on Movie Discovery Hub. Pick up where you left off.">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+  <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/cards.css">
   <link rel="stylesheet" href="styles/modal.css">
+
+    <script type="module" src="scripts/favorites.js"></script>
+
 </head>
 <body class="page-body">
 
@@ -65,13 +68,13 @@
       <div class="container">
 
         <!-- Empty state (hidden when there are favorites) -->
-        <div id="empty-state" style="text-align:center; padding: 4rem 1rem;">
-          <p style="font-size:3rem; margin-bottom:1rem;">&#9825;</p>
-          <h2 style="margin-bottom:0.75rem;">No favorites yet</h2>
-          <p style="color:#6b7280; margin-bottom:1.5rem;">
+        <div id="empty-state" class="empty-css" >
+          <p class="empty-p">&#9825;</p>
+          <h2 class="empty-h">No favorites yet</h2>
+          <p class="empty-p2">
             Browse our movies and click the heart icon to save films you want to watch.
           </p>
-          <a href="movies.html" class="btn-primary" style="display:inline-flex;">Browse Movies</a>
+          <a href="movies.html" class="btn-primary empty-fa" >Browse Movies</a>
         </div>
 
         <div class="movies-grid" id="favorites-grid"></div>
@@ -89,15 +92,6 @@
     </p>
   </footer>
 
-  <script type="module" src="scripts/favorites.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const countEl = document.getElementById('fav-count');
-    const pluralEl = document.getElementById('fav-plural');
-    const observer = new MutationObserver(() => {
-      pluralEl.textContent = countEl.textContent === '1' ? '' : 's';
-    });
-    observer.observe(countEl, { childList: true, characterData: true, subtree: true });
-  </script>
+  
 </body>
 </html>

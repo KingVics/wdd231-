@@ -41,6 +41,10 @@ fieldset legend {
   border-color: var(--gold);
 }
 
+.form-control.field-error {
+  border-color: #f43f5e;
+}
+
 textarea.form-control {
   resize: vertical;
   min-height: 100px;
@@ -153,4 +157,22 @@ fieldset:focus-within {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--silver);
+  color: var(--midnight);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--silver);
 }

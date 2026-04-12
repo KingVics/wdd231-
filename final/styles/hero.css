@@ -3,6 +3,7 @@
   background: var(--midnight);
   overflow: hidden;
   position: relative;
+  padding: 3rem;
 }
 
 /* Decorative radial accent */
@@ -68,28 +69,8 @@
   gap: 0.75rem;
 }
 
-/* Primary button */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-sm);
-  background: var(--gold);
-  color: var(--midnight);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
-  transition: filter 0.2s, transform 0.15s;
-}
-
-.btn-primary:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
-}
-
-/* Ghost button */
-.btn-ghost {
+/* Ghost / outline button — white border for dark hero backgrounds */
+.btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -103,9 +84,14 @@
   transition: background 0.2s, border-color 0.2s;
 }
 
-.btn-ghost:hover {
+.btn-outline:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Spacer above featured-panel action button */
+.featured-btn-wrap {
+  margin-top: 1rem;
 }
 
 /* Featured movie panel inside hero */

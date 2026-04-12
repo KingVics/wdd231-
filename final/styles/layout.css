@@ -1,5 +1,12 @@
-
 .container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+
+.page-wrap {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
@@ -14,6 +21,7 @@
 /* Generic section spacing */
 .section {
   padding-block: 3rem;
+  margin: 2rem;
 }
 
 .section-header {
@@ -124,6 +132,97 @@
 .page-hero p {
   color: var(--silver);
   max-width: 40rem;
+}
+
+/* ── Shared buttons (available on every page via layout.css) ─── */
+
+/* Gold CTA — works on any background */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--gold);
+  color: var(--midnight);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: filter 0.2s, transform 0.15s;
+}
+
+.btn-cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+
+/* Movies page result count */
+.results-count {
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.showing-now {
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+/* Favorites empty-state block */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.empty-css {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.empty-p {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-fa {
+  display: inline-flex;
+}
+
+.empty-p2 {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.empty-h {
+  margin-bottom: 0.75rem;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+  margin-bottom: 0.75rem;
+}
+
+.empty-text {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.suggest-again {
+  display: inline-flex;
+  align-items: center;
+  padding: .75rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--silver);
+  color: var(--midnight);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 /* Footer */

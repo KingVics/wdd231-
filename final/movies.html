@@ -14,7 +14,7 @@
   <meta property="og:title"       content="Movies | Movie Discovery Hub">
   <meta property="og:description" content="Browse all movies. Filter by genre, search by title, and save your favourites.">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="https://placehold.co/1200x630/0f172a/f59e0b?text=Movie+Discovery+Hub">
+  <meta property="og:image"       content="https://kingvics.github.io/wdd231/final/images/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,12 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/cards.css">
   <link rel="stylesheet" href="styles/modal.css">
+
+  
+  <!-- SCRIPT -->
+  <script type="module" src="scripts/movies.js"></script>
+  <script type="module" src="scripts/hamburger.js"></script>
+  
 </head>
 <body class="page-body">
 
@@ -73,8 +79,7 @@
 
         <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter by genre"></div>
 
-        <!-- #374151 on white = 9.3:1, passes AAA -->
-        <p style="margin-bottom:1rem; color:#374151; font-size:0.9rem;">
+        <p class="showing-now">
           Showing <strong id="movies-count">…</strong>
         </p>
 
@@ -95,7 +100,8 @@
     </p>
   </footer>
 
-  <script type="module" src="scripts/movies.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+ 
+  
+  <!-- <script>document.getElementById('year').textContent = new Date().getFullYear();</script> -->
 </body>
 </html>
