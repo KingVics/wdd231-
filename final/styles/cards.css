@@ -36,17 +36,23 @@
   font-size: 0.85rem;
 }
 
+/* Dark pill badge: gold (#f59e0b) on midnight (#0f172a) = 8.3:1 — passes AAA */
 .card-rating {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--midnight);
+  color: var(--gold);
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--gold);
+  font-size: 0.8rem;
 }
 
+/* #374151 on white = 9.3:1 — passes AAA */
 .card-year {
-  color: #6b7280;
+  color: #374151;
   font-size: 0.85rem;
 }
 
@@ -97,11 +103,12 @@
   background: #1e293b;
 }
 
+/* #374151 on white = 9.3:1 — passes AAA */
 .btn-fav {
   padding: 0.5rem 0.65rem;
   border-radius: var(--radius-sm);
   border: 2px solid var(--silver);
-  color: #9ca3af;
+  color: #374151;
   font-size: 1.1rem;
   line-height: 1;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
@@ -112,10 +119,11 @@
   color: #f43f5e;
 }
 
+/* #881337 on #fff1f2 = 8.0:1 — passes AAA */
 .btn-fav.is-favorite {
   border-color: #f43f5e;
   background: #fff1f2;
-  color: #f43f5e;
+  color: #881337;
 }
 
 /* Trending badge overlay */
