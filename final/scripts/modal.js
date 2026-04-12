@@ -1,9 +1,4 @@
-/**
- * modal.js
- * Manages the single shared movie-detail modal dialog.
- * Stores the current movie in a module-level variable so the
- * favourite toggle inside the modal has access to the full object.
- */
+
 
 import { isFavorite, toggleFavorite } from './storage.js';
 import { syncFavButton } from './render.js';
@@ -12,12 +7,7 @@ let overlay         = null;
 let currentMovie    = null;
 let onFavChangeCb   = null;
 
-// ── Setup ─────────────────────────────────────────────────────────────────────
 
-/**
- * Inject the modal markup once and wire all static event listeners.
- * @param {Function} [onFavChange]  called with (movieId, nowFav) after a toggle
- */
 export function initModal(onFavChange) {
   onFavChangeCb = onFavChange;
 
@@ -93,7 +83,7 @@ export function initModal(onFavChange) {
   });
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+//  Helpers
 
 function updateModalFavBtn(btn, nowFav) {
   btn.classList.toggle('is-favorite', nowFav);
@@ -110,20 +100,13 @@ function showWrap(id, value) {
   if (el) el.hidden = !value;
 }
 
-// ── Public API ────────────────────────────────────────────────────────────────
 
-/**
- * Populate and open the modal with a (fully-detailed) movie object.
- * @param {object} movie  normalised movie from api.js
- */
 export function openModal(movie) {
   if (!overlay) initModal();
   currentMovie = movie;
 
-  // Title
   overlay.querySelector('.modal-title').textContent = movie.title;
 
-  // Poster
   const poster = overlay.querySelector('.modal-poster');
   poster.src = movie.poster;
   poster.alt = `${movie.title} poster`;
@@ -161,9 +144,7 @@ export function openModal(movie) {
   overlay.querySelector('.modal-close').focus();
 }
 
-/**
- * Close and reset the modal.
- */
+
 export function closeModal() {
   overlay?.classList.remove('open');
   document.body.style.overflow = '';

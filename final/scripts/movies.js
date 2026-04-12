@@ -1,15 +1,11 @@
-/**
- * movies.js — Movies listing page
- * Provides a search box and genre quick-filters backed by the OMDB search API.
- * Full movie details are fetched on demand when "Details" is clicked.
- */
+
 
 import { searchMovies, fetchMovieDetails, fetchLatestMovies } from './api.js';
 import { renderMovies, syncFavButton } from './render.js';
 import { toggleFavorite } from './storage.js';
 import { initModal, openModal } from './modal.js';
 
-// ── Hamburger nav ──────────────────────────────────────────────────────────────
+//  Hamburger nav 
 const hamburger = document.querySelector('.hamburger');
 const navLinks  = document.querySelector('.nav-links');
 
@@ -19,14 +15,13 @@ hamburger?.addEventListener('click', () => {
   navLinks.classList.toggle('open', !expanded);
 });
 
-// ── DOM refs ───────────────────────────────────────────────────────────────────
+// DOM refs
 const grid        = document.getElementById('movies-grid');
 const searchInput = document.getElementById('search-input');
 const filterBar   = document.getElementById('filter-bar');
 const countEl     = document.getElementById('movies-count');
 
-// ── Genre quick-filter buttons ─────────────────────────────────────────────────
-// Each button triggers a fresh search for that genre term.
+
 const GENRES = [
   'Action', 'Adventure', 'Animation', 'Comedy',
   'Crime',  'Drama',     'Horror',    'Romance',
@@ -48,13 +43,12 @@ function buildFilterBar() {
   });
 }
 
-// ── Search ─────────────────────────────────────────────────────────────────────
+// Search
 let debounceTimer;
 
 searchInput?.addEventListener('input', () => {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
-    // Clear active genre when user types freely
     filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     runSearch(searchInput.value);
   }, 400);
@@ -77,12 +71,11 @@ async function runSearch(query) {
 
     renderMovies(movies, grid, {
       onDetails: async (movie) => {
-        // OMDB search stubs lack overview/director — fetch full details first
         try {
           const full = await fetchMovieDetails(movie.id);
           openModal(full);
         } catch {
-          openModal(movie); // fall back to stub if detail fetch fails
+          openModal(movie); 
         }
       },
       onFavToggle: (movie, btn) => {
@@ -102,7 +95,7 @@ async function runSearch(query) {
   }
 }
 
-// ── Init ───────────────────────────────────────────────────────────────────────
+//  Initialization
 initModal((id, nowFav) => {
   document.querySelectorAll(`.btn-fav[data-id="${id}"]`).forEach(btn => {
     syncFavButton(btn, nowFav);
@@ -111,7 +104,6 @@ initModal((id, nowFav) => {
 
 buildFilterBar();
 
-// Load latest movies by default on page open
 (async () => {
   grid.innerHTML = '<p class="state-message">Loading latest movies…</p>';
   try {

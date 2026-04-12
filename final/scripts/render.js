@@ -1,22 +1,8 @@
-/**
- * render.js
- * Pure DOM-builder functions for movie cards.
- * Handles null/missing fields that come from OMDB search stubs.
- */
+
 
 import { isFavorite } from './storage.js';
 
-/**
- * Build and return a movie card wrapper element.
- *
- * Callback signatures:
- *   onDetails(movie)         — called when "Details" is clicked
- *   onFavToggle(movie, btn)  — called when the heart button is clicked
- *
- * @param {object}   movie
- * @param {object}   [callbacks]
- * @returns {HTMLElement}
- */
+
 export function createMovieCard(movie, { onDetails, onFavToggle } = {}) {
   const fav    = isFavorite(movie.id);
   const rating = movie.rating != null ? `&#9733; ${movie.rating.toFixed(1)}` : '&#9733; —';
@@ -72,12 +58,7 @@ export function createMovieCard(movie, { onDetails, onFavToggle } = {}) {
   return wrapper;
 }
 
-/**
- * Render an array of movies into a container, replacing existing content.
- * @param {object[]}    movies
- * @param {HTMLElement} container
- * @param {object}      [callbacks]
- */
+
 export function renderMovies(movies, container, callbacks = {}) {
   container.innerHTML = '';
 
@@ -91,11 +72,7 @@ export function renderMovies(movies, container, callbacks = {}) {
   container.appendChild(fragment);
 }
 
-/**
- * Update the visual state of a favourite button without re-rendering the card.
- * @param {HTMLElement} btn
- * @param {boolean}     nowFav
- */
+
 export function syncFavButton(btn, nowFav) {
   btn.classList.toggle('is-favorite', nowFav);
   btn.innerHTML = nowFav ? '&#9829;' : '&#9825;';

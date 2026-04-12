@@ -1,15 +1,11 @@
-/**
- * main.js — Home page
- * Fetches the preset list of movies from OMDB, renders the featured panel,
- * and populates the trending grid.
- */
+
 
 import { fetchPresetMovies } from './api.js';
 import { renderMovies, syncFavButton } from './render.js';
 import { toggleFavorite } from './storage.js';
 import { initModal, openModal } from './modal.js';
 
-// ── Hamburger nav ──────────────────────────────────────────────────────────────
+// Hamburger nav
 const hamburger = document.querySelector('.hamburger');
 const navLinks  = document.querySelector('.nav-links');
 
@@ -19,7 +15,7 @@ hamburger?.addEventListener('click', () => {
   navLinks.classList.toggle('open', !expanded);
 });
 
-// ── Featured panel ─────────────────────────────────────────────────────────────
+// Featured panel with DOM refs
 function renderFeatured(movie) {
   const poster   = document.getElementById('featured-poster');
   const title    = document.getElementById('featured-title');
@@ -45,7 +41,7 @@ function renderFeatured(movie) {
   }
 }
 
-// ── Trending grid ──────────────────────────────────────────────────────────────
+// Trending grid
 function renderTrending(movies) {
   const container = document.getElementById('trending-grid');
   if (!container) return;
@@ -65,9 +61,8 @@ function renderTrending(movies) {
   });
 }
 
-// ── Init ───────────────────────────────────────────────────────────────────────
+// Init 
 initModal((id, nowFav) => {
-  // Sync any card on this page that belongs to the toggled movie
   document.querySelectorAll(`.btn-fav[data-id="${id}"]`).forEach(btn => {
     syncFavButton(btn, nowFav);
   });
@@ -80,7 +75,7 @@ initModal((id, nowFav) => {
     if (!movies.length) throw new Error('No movies returned');
 
     renderFeatured(movies[0]);
-    renderTrending(movies.slice(1));   // show the rest in the trending grid
+    renderTrending(movies.slice(1));  
   } catch (err) {
     console.error(err);
     if (grid) grid.innerHTML = '<p class="state-message">Could not load movies. Check your connection.</p>';
